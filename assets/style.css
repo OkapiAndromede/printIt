@@ -1,4 +1,5 @@
-/* variables declaration */
+@import "component.css";
+/****** Variables***********/
 :root {
   --primary-color: #3396c0;
   --secondary-color: #cd006b;
@@ -38,6 +39,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/****** Settings ***********/
 section {
   margin-block: 6em;
 }
@@ -57,7 +59,7 @@ li {
   font-size: 16px;
   line-height: 26px;
 }
-/****** Header CSS ***********/
+/****** Header ***********/
 .container {
   max-width: 1440px;
   margin-inline: auto;
@@ -72,19 +74,7 @@ header {
   width: 260px;
   margin-block: 10px;
 }
-
-.btn {
-  background-color: var(--primary-color);
-  padding: 16px 32px;
-  margin-inline: 5px;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-}
-.devis {
-  background-color: var(--secondary-color);
-}
-
+/****** Banner ***********/
 #banner {
   display: flex;
   flex-direction: column;
@@ -145,6 +135,7 @@ header {
   font-weight: 400;
   font-size: 30px;
 }
+/****** About us ***********/
 #about-us {
   display: flex;
 }
@@ -160,7 +151,7 @@ header {
   width: 65%;
   margin-bottom: 1em;
 }
-
+/****** Products ***********/
 #products {
   display: flex;
   align-items: flex-start;
@@ -179,6 +170,7 @@ header {
 .bg-yellow {
   background-color: var(--third-color);
 }
+/****** Question ***********/
 #question {
   display: flex;
   flex-direction: column;
@@ -191,7 +183,7 @@ header {
 #question p {
   margin-bottom: 20px;
 }
-
+/****** Why us ***********/
 #why-us {
   display: flex;
   flex-direction: column;
@@ -218,6 +210,7 @@ header {
 .bg-lightblue {
   background-color: #e6f4fb;
 }
+/****** Contact ***********/
 #contact {
   margin-bottom: 0;
 }
@@ -246,6 +239,7 @@ header {
 .inline-icon {
   vertical-align: middle;
 }
+/****** Footer***********/
 footer {
   background-color: #28363d;
   color: white;
@@ -268,7 +262,7 @@ footer div {
   font-weight: 700;
   font-size: 16px;
 }
-
+/****** Media queries***********/
 @media all and (max-width: 1250px) {
   #contact > article {
     flex: 2;
