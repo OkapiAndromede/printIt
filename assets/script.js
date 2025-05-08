@@ -23,6 +23,7 @@ const arrowRight = document.querySelector(".arrow_right");
 const dotsConteneur = document.querySelector(".dots");
 const nbImage = slides.length;
 const image = document.querySelector(".banner-img");
+const text = document.querySelector(".banner-txt");
 let i = 0;
 
 /****** Ajout des bullets points ***********/
@@ -31,32 +32,40 @@ for (let i = 0; i < nbImage; i++) {
   dot.classList.add("dot");
   dotsConteneur.appendChild(dot);
 }
-//querySelector va chercher par essence le premier élement avec la class .dot
+//querySelectorAll va chercher par essence tous les élements avec la class .dot
 const dot = document.querySelectorAll(".dot");
 dot[i].classList.add("dot_selected");
-//dot.classList.add("dot_selected");
 
 /****** Ajout des events listener ***********/
 arrowLeft.addEventListener("click", () => {
-  console.log("Clique gauche");
+  if (i === 0) {
+    dot[i].classList.remove("dot_selected");
+    i = nbImage - 1;
+    dot[i].classList.add("dot_selected");
+    sliderUpdate(i);
+  } else {
+    dot[i].classList.remove("dot_selected");
+    i--;
+    dot[i].classList.add("dot_selected");
+    sliderUpdate(i);
+  }
 });
 
 arrowRight.addEventListener("click", () => {
-  console.log("Clique droit");
   if (i < nbImage - 1) {
     dot[i].classList.remove("dot_selected");
     i++;
     dot[i].classList.add("dot_selected");
-    image.src = `./assets/images/slideshow/${slides[i].image}`;
+    sliderUpdate(i);
   } else {
     dot[i].classList.remove("dot_selected");
     i = 0;
     dot[i].classList.add("dot_selected");
-    image.src = `./assets/images/slideshow/${slides[i].image}`;
+    sliderUpdate(i);
   }
-  console.log(i);
 });
 
 function sliderUpdate(index) {
   image.src = `./assets/images/slideshow/${slides[index].image}`;
+  text.innerHTML = slides[i].tagLine;
 }
